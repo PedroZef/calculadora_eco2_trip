@@ -30,6 +30,4 @@ export function exibirResultados(emissaoKg) {
  */
 export function limparResultados() {
     document.getElementById('resultados').classList.add('oculto');
-    document.getElementById('comparacao').classList.add('oculto');
-    document.getElementById('creditos-carbono').classList.add('oculto');
 }
