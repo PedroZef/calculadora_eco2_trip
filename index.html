@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pegada de Carbono</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho__container">
+            <h1 class="cabecalho__titulo">🌿 Calculadora de Pegada de Carbono</h1>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Mudar tema">
+                <span class="theme-toggle__icon-sun">☀️</span>
+                <span class="theme-toggle__icon-moon">🌙</span>
+            </button>
+        </div>
+        <h1 class="cabecalho__subtitulo">Calcule as emissões de CO₂ em suas viagens e contribua para um planeta mais
+            sustentável</h1>
+    </header>
+
+    <main class="principal">
+        <form id="formulario-calculadora" class="formulario-calculadora">
+            <div class="formulario__grupo">
+                <label for="origem" class="formulario__rotulo">Origem</label>
+                <input type="text" id="origem" class="formulario__entrada" list="lista-cidades"
+                    placeholder="Digite a cidade de origem" required>
+            </div>
+
+            <div class="formulario__grupo">
+                <label for="destino" class="formulario__rotulo">Destino</label>
+                <input type="text" id="destino" class="formulario__entrada" list="lista-cidades"
+                    placeholder="Digite a cidade de destino" required>
+            </div>
+
+            <datalist id="lista-cidades"></datalist>
+
+            <div class="formulario__grupo">
+                <label for="distancia" class="formulario__rotulo">Distância (km)</label>
+                <input type="number" id="distancia" class="formulario__entrada" readonly placeholder="0">
+                <small class="formulario__texto-ajuda">A distância será preenchida automaticamente</small>
+            </div>
+
+            <div class="formulario__grupo">
+                <label class="formulario__caixa-selecao">
+                    <input type="checkbox" id="distancia-manual" class="formulario__caixa-selecao-entrada">
+                    <span class="formulario__caixa-selecao-rotulo">Inserir distância manualmente</span>
+                </label>
+            </div>
+
+            <div class="formulario__grupo">
+                <label class="formulario__rotulo">Meio de Transporte</label>
+                <div class="grade-transporte">
+                    <label class="grade-transporte__opcao">
+                        <input type="radio" name="transport" value="bicycle" class="grade-transporte__radio">
+                        <span class="grade-transporte__rotulo">
+                            <span class="grade-transporte__icone">🚲</span>
+                            <span class="grade-transporte__texto">Bicicleta</span>
+                        </span>
+                    </label>
+
+                    <label class="grade-transporte__opcao">
+                        <input type="radio" name="transport" value="car" class="grade-transporte__radio" checked>
+                        <span class="grade-transporte__rotulo">
+                            <span class="grade-transporte__icone">🚗</span>
+                            <span class="grade-transporte__texto">Carro</span>
+                        </span>
+                    </label>
+
+                    <label class="grade-transporte__opcao">
+                        <input type="radio" name="transport" value="bus" class="grade-transporte__radio">
+                        <span class="grade-transporte__rotulo">
+                            <span class="grade-transporte__icone">🚌</span>
+                            <span class="grade-transporte__texto">Ônibus</span>
+                        </span>
+                    </label>
+
+                    <label class="grade-transporte__opcao">
+                        <input type="radio" name="transport" value="truck" class="grade-transporte__radio">
+                        <span class="grade-transporte__rotulo">
+                            <span class="grade-transporte__icone">🚚</span>
+                            <span class="grade-transporte__texto">Caminhão</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="formulario__enviar">Calcular Emissão</button>
+        </form>
+
+        <section id="resultados" class="resultados oculto">
+            <div id="resultados-conteudo" class="resultados__conteudo"></div>
+        </section>
+
+        <section id="comparacao" class="comparacao oculto">
+            <div id="comparacao-conteudo" class="comparacao__conteudo"></div>
+        </section>
+
+        <section id="creditos-carbono" class="creditos-carbono oculto">
+            <div id="creditos-carbono-conteudo" class="creditos-carbono__conteudo"></div>
+        </section>
+
+        <section id="dicas-sustentaveis" class="dicas-sustentaveis">
+            <div id="dicas-conteudo" class="dicas-conteudo">
+                <h2 class="dicas-sustentaveis__titulo">Dicas para Reduzir sua Pegada de Carbono</h2>
+                <div class="dica">
+                    <span class="dica__icone">🚲</span>
+                    <h3 class="dica__titulo">Use mais a bicicleta</h3>
+                    <p class="dica__descricao">Para trajetos curtos, a bicicleta é uma ótima opção para reduzir as
+                        emissões de CO₂.</p>
+                </div>
+                <div class="dica">
+                    <span class="dica__icone">🚌</span>
+                    <h3 class="dica__titulo">Use o transporte público</h3>
+                    <p class="dica__descricao">O transporte público é uma forma eficiente de reduzir as emissões de CO₂
+                        por pessoa.</p>
+                </div>
+                <div class="dica">
+                    <span class="dica__icone">🚶</span>
+                    <h3 class="dica__titulo">Caminhe mais</h3>
+                    <p class="dica__descricao">Caminhar é uma forma saudável e sustentável de se locomover.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p class="rodape__creditos">&copy; 2026 DIO | Projeto GitHub Copilot do Pedro Zeferino da Silva</p>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/dark-mode.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ======================================== */
+/*         PASSO 1: TIPOGRAFIA E CORES      */
+/* ======================================== */
+:root {
+    --cor-primaria: #1a73e8;
+    /* Azul para um visual mais moderno e confiável */
+    --cor-secundaria: #28a745;
+    /* Verde para manter o toque ecológico */
+    --cor-fundo: #f4f7f6;
+    --cor-surface: #ffffff;
+    --cor-texto: #3c4043;
+    --cor-texto-secundario: #5f6368;
+    --cor-borda: #dfe1e5;
+    --sombra-card: 0 10px 30px rgba(0, 0, 0, 0.07);
+    --sombra-elemento: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* ======================================== */
+/*       PASSO 2: LAYOUT E SOMBRAS        */
+/* ======================================== */
+.cabecalho {
+    background-color: var(--cor-surface);
+    color: var(--cor-primaria);
+    text-align: center;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.cabecalho__titulo {
+    font-size: 2.rem;
+    font-weight: 600;
+
+}
+
+.cabecalho__subtitulo {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--cor-secundaria);
+}
+
+.principal {
+    max-width: 700px;
+    margin: 2.5rem auto;
+    padding: 2.5rem;
+    background-color: var(--cor-surface);
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+}
+
+/* ======================================== */
+/*       PASSO 3: ESTILO DO FORMULÁRIO    */
+/* ======================================== */
+.formulario-calculadora {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.formulario__grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario__rotulo {
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.formulario__entrada {
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.formulario__entrada:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+}
+
+.formulario__entrada:read-only {
+    background-color: #f9f9f9;
+}
+
+.formulario__caixa-selecao {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--cor-texto-secundario);
+}
+
+.formulario__enviar {
+    padding: 1rem;
+    background: linear-gradient(45deg, var(--cor-secundaria), #4a9d4a);
+    color: var(--cor-surface);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(92, 184, 92, 0.3);
+}
+
+.formulario__enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(92, 184, 92, 0.4);
+}
+
+/* ======================================== */
+/*      PASSO 4: GRADE DE TRANSPORTE      */
+/* ======================================== */
+.grade-transporte {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.grade-transporte__rotulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-align: center;
+    background-color: var(--cor-surface);
+}
+
+.grade-transporte__icone {
+    font-size: 2.2rem;
+    transition: transform 0.3s;
+}
+
+.grade-transporte__texto {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.grade-transporte__radio {
+    display: none;
+}
+
+.grade-transporte__radio:checked+.grade-transporte__rotulo {
+    border-color: var(--cor-primaria);
+    background-color: rgba(26, 115, 232, 0.05);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+}
+
+.grade-transporte__radio:checked+.grade-transporte__rotulo .grade-transporte__icone {
+    transform: scale(1.2);
+}
+
+/* ======================================== */
+/*      PASSO 5: SEÇÃO DE RESULTADOS      */
+/* ======================================== */
+.resultados {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, var(--cor-primaria), #1c5dab);
+    color: var(--cor-surface);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(26, 115, 232, 0.3);
+}
+
+.resultados__titulo {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+    opacity: 0.9;
+}
+
+.resultados__texto {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.resultados__texto strong {
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.oculto {
+    display: none;
+}
+
+/* ======================================== */
+/*          PASSO 6: RESPONSIVIDADE         */
+/* ======================================== */
+@media (max-width: 768px) {
+    .principal {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .cabecalho__titulo {
+        font-size: 1.8rem;
+    }
+
+    .resultados__texto strong {
+        font-size: 2.8rem;
+    }
+
+    .dicas-conteudo {
+        grid-template-columns: 1fr;
+    }
+}
+
+.rodape {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+}
+
+/* ======================================== */
+/*           PASSO 7: MODO ESCURO           */
+/* ======================================== */
+.dark-mode {
+    --cor-fundo: #121212;
+    --cor-surface: #1e1e1e;
+    --cor-texto: #e0e0e0;
+    --cor-texto-secundario: #a0a0a0;
+    --cor-borda: #333333;
+}
+
+.dark-mode .cabecalho {
+    background-color: var(--cor-surface);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.dark-mode .principal {
+    background-color: var(--cor-surface);
+}
+
+.dark-mode .formulario__entrada {
+    background-color: #2c2c2c;
+    color: var(--cor-texto);
+    border-color: var(--cor-borda);
+}
+
+.dark-mode .formulario__entrada:read-only {
+    background-color: #252525;
+}
+
+.dark-mode .grade-transporte__rotulo {
+    background-color: var(--cor-surface);
+    border-color: var(--cor-borda);
+}
+
+.dark-mode .grade-transporte__radio:checked+.grade-transporte__rotulo {
+    background-color: rgba(26, 115, 232, 0.1);
+}
+
+/* ======================================== */
+/*        PASSO 8: BOTÃO DE TEMA            */
+/* ======================================== */
+.cabecalho__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1.5rem 0;
+}
+
+.theme-toggle {
+    position: absolute;
+    right: 2rem;
+    background: none;
+    border: 1px solid var(--cor-borda);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-shadow: var(--sombra-elemento);
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle__icon-sun,
+.theme-toggle__icon-moon {
+    font-size: 1.5rem;
+}
+
+.dark-mode .theme-toggle__icon-sun {
+    display: none;
+}
+
+.theme-toggle__icon-moon {
+    display: none;
+}
+
+.dark-mode .theme-toggle__icon-moon {
+    display: inline;
+}
+
+/* ======================================== */
+/*          PASSO 9: SEÇÃO DE DICAS         */
+/* ======================================== */
+.dicas-sustentaveis {
+    margin-top: 2.5rem;
+}
+
+.dicas-conteudo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.dica {
+    background-color: var(--cor-surface);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dica:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-card);
+}
+
+.dica__icone {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.dica__titulo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.dica__descricao {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+    margin: 0;
+}
