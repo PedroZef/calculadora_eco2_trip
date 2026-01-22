@@ -14,7 +14,7 @@ Este é um projeto de uma calculadora de pegada de carbono para viagens. Ele per
 
 ## Como usar
 
-1. Clone este repositório: `git clone https://github.com/seu-usuario/calculadora_eco2_trip.git`
+1. Clone este repositório: `git clone https://github.com/PedroZef/calculadora_eco2_trip.git`
 2. Abra o arquivo `index.html` em seu navegador.
 3. Selecione a cidade de origem e destino, ou insira a distância manualmente.
 4. Escolha o meio de transporte.
